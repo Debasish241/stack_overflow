@@ -59,24 +59,24 @@ export default async function createQuestionCollection() {
     ),
   ]);
   console.log("Question Attributes created");
-  //create Indexes
-  //   await Promise.all([
-  //     databases.createIndex(
-  //       db,
-  //       questionsCollection,
-  //       "title",
-  //       IndexType.Fulltext,
-  //       ["title"],
-  //       ["asc"]
-  //     ),
-  //     databases.createIndex(
-  //       db,
-  //       questionsCollection,
-  //       "content",
-  //       IndexType.Fulltext,
-  //       ["content"],
-  //       ["asc"]
-  //     ),
-  //   ]);
+  //   create Indexes
+  await Promise.all([
+    databases.createIndex(
+      db,
+      questionsCollection,
+      "title",
+      IndexType.Fulltext,
+      ["title"],
+      ["asc"]
+    ),
+    databases.createIndex(
+      db,
+      questionsCollection,
+      "content",
+      IndexType.Fulltext,
+      ["content"],
+      ["asc"]
+    ),
+  ]);
   console.log("Question Indexes created");
 }
